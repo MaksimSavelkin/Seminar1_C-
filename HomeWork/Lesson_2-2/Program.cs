@@ -6,7 +6,7 @@ void Method2(int a)
     Console.Write(a / 100);
     Console.Write(a % 10);
     Console.WriteLine(" ");
-    
+   
 }
 int a = new Random().Next(100, 999);
 Console.WriteLine(a);
