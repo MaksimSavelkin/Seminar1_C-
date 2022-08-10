@@ -1,45 +1,52 @@
 ﻿// Задача 3: Задайте массив вещественных чисел. Найдите
 // разницу между максимальным и минимальным элементов массива.
 
-int[] RandomArray()
-{
-    Console.WriteLine("Imput number of elements");
-    int num = int.Parse(Console.ReadLine());
-    Console.WriteLine("Imput element's min");
-    int min = int.Parse(Console.ReadLine());
-    Console.WriteLine("Imput element's max");
-    int max = int.Parse(Console.ReadLine());
-    int [] array = new int[num];
-    for(int i = 0; i < num; i++)
-    {
-        array[i] = new Random().Next(min, max);
-        Console.Write($"{array[i]}");
-    }
-    return(array);
-}
-
 void Print(int[] arr)
 {
     int size = arr.Length;
 
-    for(int i = 0; i < size; i++)
+    for (int i = 0; i < size; i++)
     {
-        Console.Write($"{arr[i]}");
+        Console.Write($"{arr[i]} ");
     }
     Console.WriteLine();
 }
 
-int[] Razn(int[] arr)
+int[] MassNums(int size)
 {
-    int min = 0;
-    int max = 0;
-    int i = 0;
-    if()
-       
-        
-    return new_arr;
+    int[] arr = new int[size];
+
+    for (int i = 0; i < size; i++)
+    {
+        arr[i] = new Random().Next(0, 100);
+    }
+    return arr;
 }
-int[] arr_1 = RandomArray();
+
+int MinimumSearch(int[] arr)
+{
+    int min = arr[0];
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] < min)
+        min = arr[i];
+    } 
+    return min;  
+}
+int MaximumSearch(int[] arr)
+{
+    int max = arr[0];
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] > max)
+        max = arr[i];
+    } 
+    return max;  
+}
+
+int[] arr_1 = MassNums(10);
 Print(arr_1);
-int[] new_arr_1 = ParisNum(arr_1);
-Print(new_arr_1);
+Console.WriteLine(MinimumSearch(arr_1));
+Console.WriteLine(MaximumSearch(arr_1));
+int d = MaximumSearch(arr_1) - MinimumSearch(arr_1);
+Console.WriteLine($"Разница между массивами:  {d}");
